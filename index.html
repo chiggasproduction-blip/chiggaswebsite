@@ -38,29 +38,6 @@
             transition: background-color var(--transition-speed) ease;
         }
 
-        /* --- PRELOADER ANIMATION --- */
-        #preloader {
-            transition: opacity 0.8s ease-in-out 0.5s, visibility 0.8s ease-in-out 0.5s;
-        }
-        .preloader-char {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(50px) scale(0.8);
-            /* MODIFIED: Faster animation speed */
-            animation: reveal-char 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            animation-delay: calc(var(--char-index) * 0.1s);
-        }
-        @keyframes reveal-char {
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        .preloader-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
         /* --- NEW SCENIC BACKGROUND --- */
         .scenic-background {
             position: fixed;
@@ -238,16 +215,6 @@
     </style>
 </head>
 <body class="night">
-    
-    <div id="preloader" class="fixed inset-0 bg-deep-navy z-[100] flex justify-center items-center">
-        <h1 class="text-white text-8xl font-black tracking-widest">
-            <span class="preloader-char" style="--char-index: 0;">C</span>
-            <span class="preloader-char" style="--char-index: 1;">.</span>
-            <span class="preloader-char" style="--char-index: 2;">P</span>
-            <span class="preloader-char" style="--char-index: 3;">.</span>
-            <span class="preloader-char" style="--char-index: 4;">H</span>
-        </h1>
-    </div>
 
     <div class="scenic-background">
         <div class="stars"></div>
@@ -302,9 +269,9 @@
 
         <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
             <div id="hero-content" class="relative z-10">
-                <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4" style="animation: fade-in-down 1s ease-out 0.5s forwards; opacity: 0;">CHIGGAS</h1>
-                <h2 class="text-4xl md:text-6xl font-bold tracking-tight hero-gradient-text" style="animation: fade-in-up 1s ease-out 0.8s forwards; opacity: 0;">PRODUCTION HOUSE</h2>
-                <p class="text-lg text-gray-200 mt-6 max-w-2xl mx-auto" style="animation: fade-in 1s ease-out 1.2s forwards; opacity: 0;">Crafting stories that inspire, innovate, and ignite.</p>
+                <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-4">CHIGGAS</h1>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight hero-gradient-text">PRODUCTION HOUSE</h2>
+                <p class="text-lg text-gray-200 mt-6 max-w-2xl mx-auto">Crafting stories that inspire, innovate, and ignite.</p>
                 <button id="toggle-day-night" class="mt-8 bg-white/20 backdrop-blur-sm text-white font-semibold py-2 px-6 rounded-lg transition duration-300 hover:bg-white/30 transform hover:scale-105">Toggle Day/Night</button>
             </div>
             <div class="scroll-indicator absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
@@ -317,7 +284,7 @@
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 class="text-4xl font-bold mb-4">About <span class="text-dynamic-soft-pink">C.P.H.</span></h2>
-                        <p class="text-gray-300 mb-4">Founded in 2025, Chiggas Production House is a creative powerhouse dedicated to pushing the boundaries of visual storytelling. We are a collective of passionate filmmakers, artists, and innovators who believe in the power of a well-told story.</p>
+                        <p class="text-gray-300 mb-4">Founded on September 15, 2025, Chiggas Production House is a creative powerhouse dedicated to pushing the boundaries of visual storytelling. We are a collective of passionate filmmakers, artists, and innovators who believe in the power of a well-told story.</p>
                         <p class="text-gray-300">From concept to final cut, we handle every aspect of production with meticulous care and a commitment to excellence. Our mission is to create unforgettable experiences that resonate with audiences worldwide.</p>
                     </div>
                     <div class="relative h-80 rounded-lg overflow-hidden transform transition-transform duration-500 hover:scale-105 shadow-2xl">
@@ -345,7 +312,6 @@
                 </div>
             </section>
 
-            <!-- === NEW BRANCHES SECTION START === -->
             <section id="branches" class="section-hidden">
                 <h2 class="text-4xl font-bold text-center mb-12">Our Creative <span class="text-dynamic-soft-pink">Branches</span></h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -372,8 +338,6 @@
                     </div>
                 </div>
             </section>
-            <!-- === NEW BRANCHES SECTION END === -->
-
             <section id="members" class="section-hidden">
                 <h2 class="text-4xl font-bold text-center mb-12">Meet the <span class="text-dynamic-soft-pink">Core Team</span></h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center">
@@ -407,7 +371,7 @@
                     </div>
                      <div class="group">
                         <div class="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 border-4 border-dynamic group-hover:border-dynamic-soft-pink transition-colors duration-300">
-                            <img src="https://placehold.co/200x200/21325E/e5e5e5?text=Writer" alt="Writer" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <img src="photos/nellie.jpg" alt="Writer" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
                         <h3 class="text-xl font-bold">Nellie Ningthoujam</h3>
                         <p class="text-dynamic-soft-pink">Head Dance Choreographer</p>
@@ -429,18 +393,19 @@
                 </div>
             </section>
             
-            <!-- === NEW ACHIEVEMENTS SECTION START === -->
             <section id="achievements" class="section-hidden">
                 <h2 class="text-4xl font-bold text-center mb-12">Our <span class="text-dynamic-soft-pink">Achievements</span></h2>
                 <div class="max-w-4xl mx-auto space-y-8 bg-card backdrop-blur-sm p-8 md:p-12 rounded-lg border border-dynamic">
                     <div class="flex items-start space-x-6">
                         <div class="flex-shrink-0 pt-1">
-                            <svg class="w-8 h-8 text-dynamic-soft-pink" xmlns="" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 100-13.5h9a9.75 9.75 0 000 13.5zM10.5 6.75h3v6h-3v-6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75h.008v.008H12v-.008z" /></svg>
+                            <svg class="w-8 h-8 text-dynamic-soft-pink" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 100-13.5h9a9.75 9.75 0 000 13.5zM10.5 6.75h3v6h-3v-6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75h.008v.008H12v-.008z" /></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-white">HACKATHON 2025</h3>
-                            <p class="text-gray-300 mt-1">Our project "Web Orrey for near earth objects" won the grand prize for its innovative graphics, experience and innovation in the intercollege NASA hackathon.</p>
-                            <a href>"hackathon/homepage3.html"</a>
+                            <h3 class="text-xl font-bold text-white">NASA SPACE APPS HACKATHON 2025</h3>
+                            <p class="text-gray-300 mt-1">In response to the NASA Space Apps Hackathon challenge, our team engineered a dynamic orrery web application to display Near-Earth Objects. This solution was selected to advance to the national competition, recognizing its innovative approach to celestial body tracking.</p>
+                            <a href="file:///C:/Users/Aaron%20Jaison/CPH%20Hackathon%201/FinalNSAH.html" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 bg-dynamic-rose hover:bg-dynamic-rose-dark text-white font-bold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105">
+                                View the Project
+                            </a>
                         </div>
                     </div>
                      <div class="flex items-start space-x-6">
@@ -448,8 +413,8 @@
                              <svg class="w-8 h-8 text-dynamic-soft-pink" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 100-13.5h9a9.75 9.75 0 000 13.5zM10.5 6.75h3v6h-3v-6z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 15.75h.008v.008H12v-.008z" /></svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-white">Official Selection - Sunrise Film Festival</h3>
-                            <p class="text-gray-300 mt-1">"The Last Artist" was featured among a prestigious collection of international films.</p>
+                            <h3 class="text-xl font-bold text-white">Connecting Hearts, Inclusive Gatherings, Great Adventures</h3>
+                            <p class="text-gray-300 mt-1">Successfully built and scaled a community from the ground up, uniting individuals through a shared passion for creativity, connection, and adventure.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-6">
@@ -463,8 +428,6 @@
                     </div>
                 </div>
             </section>
-            <!-- === NEW ACHIEVEMENTS SECTION END === -->
-
             <section id="contact" class="section-hidden">
                 <div class="bg-card backdrop-blur-sm rounded-lg p-8 md:p-16 border border-dynamic">
                     <div class="text-center max-w-3xl mx-auto">
@@ -506,13 +469,11 @@
             <div class="container mx-auto px-6 text-center">
                 <p>&copy; 2025 Chiggas Production House. All Rights Reserved.</p>
                 <div class="flex justify-center space-x-6 mt-4">
-                    <!-- YouTube Icon Link -->
                     <a href="#" class="hover:text-dynamic-soft-pink transition-all duration-300 transform hover:scale-125" aria-label="YouTube">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
                         </svg>
                     </a>
-                    <!-- Instagram Icon Link -->
                     <a href="https://www.instagram.com/c.p.h__?igsh=M3l0ZDhiODh3cW5v" class="hover:text-dynamic-soft-pink transition-all duration-300 transform hover:scale-125" aria-label="Instagram">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.44c-3.117 0-3.479.012-4.696.068-2.618.12-3.633 1.141-3.75 3.75-.056 1.218-.067 1.575-.067 4.571s.011 3.353.067 4.571c.117 2.609 1.132 3.633 3.75 3.75 1.217.056 1.579.068 4.696.068s3.479-.012 4.696-.068c2.618-.117 3.633-1.141 3.75-3.75.056-1.218.067-1.575.067-4.571s-.011-3.353-.067-4.571c-.117-2.609-1.132-3.633-3.75-3.75-1.217-.056-1.579-.068-4.696-.068z"></path>
@@ -527,19 +488,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Preloader ---
-            const preloader = document.getElementById('preloader');
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    preloader.classList.add('preloader-hidden');
-                }, 2000); // Wait for intro animation to play
-            });
             
             // --- Day/Night Toggle ---
             const toggleButton = document.getElementById('toggle-day-night');
             toggleButton.addEventListener('click', () => {
-                // Corrected Logic: Explicitly check for one class and swap to the other.
                 if (document.body.classList.contains('day')) {
                     document.body.classList.replace('day', 'night');
                 } else {
@@ -572,21 +524,32 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-            // --- Hero Title Fade on Scroll ---
+            
             const heroContent = document.getElementById('hero-content');
-            window.addEventListener('scroll', () => {
-                const fadeOutDistance = 400; 
+            const animatedHeroElements = heroContent.querySelectorAll('h1, h2, p');
 
+            // --- JAVASCRIPT-CONTROLLED INTRO AND SCROLL ---
+            // This function handles all opacity and transform changes for the hero
+            function handleHeroAnimation() {
+                // Set the initial state on page load (when scrollY is 0)
+                // And also handles fading on scroll
+                const fadeOutDistance = 250;
                 const scrollY = window.scrollY;
-                if (scrollY < fadeOutDistance) {
-                    const opacity = 1 - (scrollY / fadeOutDistance);
-                    heroContent.style.opacity = opacity;
-                    heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
-                } else {
-                    heroContent.style.opacity = 0;
-                }
-            });
+                const opacity = Math.max(0, 1 - (scrollY / fadeOutDistance));
+
+                animatedHeroElements.forEach(el => {
+                    el.style.opacity = opacity;
+                });
+                
+                heroContent.style.transform = `translateY(${scrollY * 0.3}px)`;
+            }
+
+            // Run the function once on page load to set the initial visible state
+            handleHeroAnimation();
+
+            // Attach the function to the scroll event to handle fading
+            window.addEventListener('scroll', handleHeroAnimation);
+
 
             // --- Konami Code Easter Egg ---
             const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
@@ -608,4 +571,3 @@
     </script>
 </body>
 </html>
-
